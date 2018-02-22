@@ -20,9 +20,9 @@ const cities = [];
 // const prom = fetch(endpoint);
 //console.log(prom);
  
-fetch(endpoint)
-.then(blob => blob.json())//returns promise again
-.then(data => cities.push(...data)) // spread
+fetch(endpoint) // returns promise, use .then to process another promi.
+.then(blob => blob.json())//converting to its format(json)
+.then(data => cities.push(...data)) // spread syntax (expanding iterables in place)
 
 function numberWithCommas(x){
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
